@@ -1,0 +1,40 @@
+{
+  "name": "EasyTypora",
+  "version": "1.0.0",
+  "description": "简单上传Typora图片到自建服务器的工具",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-static": "^1.2.6",
+    "form-data": "^3.0.0",
+    "fs-extra": "^9.0.1",
+    "gray-matter": "^4.0.2",
+    "multer": "^1.4.2",
+    "needle": "^2.5.2",
+    "nodemon": "^2.0.6",
+    "pkg": "^4.4.9",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-win": "pkg ./client/typora.js -t win -o ./out/typora-win.exe",
+    "build-linux": "pkg ./client/typora.js -t linux -o ./out/typora-linux.sh",
+    "build-mac": "pkg ./client/typora.js -t linux -o ./out/typora-mac.app",
+    "build": "npm run build-win && npm run build-linux && npm run build-mac",
+    "dev": "nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaoolee/EasyTypora.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhaoolee/EasyTypora/issues"
+  },
+  "homepage": "https://github.com/zhaoolee/EasyTypora#readme"
+}
