@@ -46,9 +46,10 @@ server.post('/upload_file', upload.single('file'), function (req, res) {
 
     fs.moveSync(req.file.path, path.join(req.file.destination, new_image_name));
     let image_url = `${host}:${client_port}/assets/${new_image_name}`;
-    if(client_port == "80"){
+    if((client_port == "80")||(client_port == "443")){
       image_url = `${host}/assets/${new_image_name}`;
     }
+
   
     console.log(`--${moment().format("YYYY-MM-DD HH:mm:ss")}-image_url-->>${image_url}`)
     res.send(image_url)
