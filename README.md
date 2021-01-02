@@ -2,6 +2,10 @@
 
 EasyTypora是一个为Typora添加私用化图床的实用小工具，要使用本项目，你需要有自己的一台云服务器～
 
+## 最终效果
+
+![](https://static01.imgkr.com/temp/114b60532b1a4033a9ecd0808a329c8a.gif)
+
 ## 项目特色
 
 - 跨平台！无论你使用macOS, Windows， Linux， 都可以使用本工具
@@ -88,10 +92,38 @@ module.exports = {
 
 ```
 
+- 服务端的80端口可能已经被nginx占据，如果我们依然想用80端口作为图床对外的服务端口，我们可以配置一层Nginx转发, 比如把server_port 设置为 12800 ,把client_port设置为80, 然后Nginx加上将12800端口的服务转发到80端口即可！
+
+```
+server {
+    server_name      cdn.fangyuanxiaozhan.com
+    listen           80;
+
+    location / {
+        proxy_pass http://127.0.0.1:12800;
+        proxy_set_header Host $host:80;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+
+```
+
+
 #### 启动服务
 ```
 npm start
 ```
+
+服务启动后，访问对应的域名和端口可以看到提示信息
+
+![](https://static01.imgkr.com/temp/2bced93851334b0da32f135355af5782.png)
+
+添加/info路径，可以除secret_token以外的配置信息
+
+![](https://static01.imgkr.com/temp/4b90d0f32dac415482023e651303c0e6.png)
+
+
 
 #### 关闭服务
 
@@ -106,5 +138,22 @@ npm run stop
 // 同时构建 Linux macOS Windows的二进制包
 npm run build
 ```
+
+
+构建完成后，项目的根目录的dist文件夹会出现, 三个构建好的文件
+
+| 文件名 | 适用平台 |
+| ---   | --- |
+|   typora-win.exe |  Windows   |
+|  typora-mac.app    |   macOS   |
+|   typora-linux.sh    |  linux     |
+
+![](https://static01.imgkr.com/temp/28356b68323f4f6da623557202511c3d.png)
+
+
+
+#### 我们可以通过scp文件传输服务,把生成的文件保存到本地,然后在本地验证服务
+
+![](https://static01.imgkr.com/temp/114b60532b1a4033a9ecd0808a329c8a.gif)
 
 
