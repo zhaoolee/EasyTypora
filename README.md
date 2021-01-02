@@ -43,7 +43,64 @@ Typora自定义图床，需要一个可执行文件，而Windows与Linux的shell
 ## 如何使用
 
 
+#### 安装node.js 环境
+
 
 ```
-git clone --depth 1 https://github.com/zhaoolee/EasyTypora.git
+cd /opt/
+wget https://nodejs.org/dist/v14.0.0/node-v14.0.0-linux-x64.tar.xz
+tar xvf node-v14.0.0-linux-x64.tar.xz
+
 ```
+
+- 将Node.js添加到系统变量 vim
+
+```
+echo "export NODE_HOME=/opt/node-v14.0.0-linux-x64" >> ~/.bashrc
+echo "export PATH=\$NODE_HOME/bin:\$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+
+#### 获取最新版本的小程序
+
+```
+cd  /opt/
+git clone --depth 1 https://github.com/zhaoolee/EasyTypora.git
+cd EasyTypora
+# 安装依赖包
+npm i 
+```
+
+#### 将conf.js里面的内容改为自己的服务器
+
+
+```
+module.exports = {
+    // 填写域名或ip(带http或https协议，如 http://cdn.fangyuanxiaozhan.com)
+    host: "http://cdn.fangyuanxiaozhan.com",
+    // 填写服务端运行的端口号（填字符串）
+    server_port: "12800",
+    // 填写客户端请求的端口号（填字符串）
+    client_port: "12800",
+    // secret_token (客户端和服务端会同时添加secret_token鉴权，防止被他人滥用) 
+    secret_token: "8asadelualdldfgaseasdfasdedadf"
+}
+
+```
+
+#### 启动服务
+```
+npm start
+```
+
+
+
+#### 构建客户端二进制包
+
+
+```
+// 同时构建 Linux macOS Windows的二进制包
+npm run build
+```
+
+

@@ -40,7 +40,8 @@
     "build-mac": "pkg ./client/typora.js -t linux -o ./dist/typora-mac.app",
     "build": "npm run build-win && npm run build-linux && npm run build-mac",
     "dev": "nodemon ./server/index.js",
-    "start": "pm2 ./server/index.js"
+    "start": "pm2 start ./server/index.js --no-daemon",
+    "stop": "pm2 stop ./server/index.js"
   },
   "repository": {
     "type": "git",
