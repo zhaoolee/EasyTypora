@@ -3,6 +3,19 @@
   "version": "1.0.0",
   "description": "简单上传Typora图片到自建服务器的工具",
   "main": "index.js",
+  "pkg": {
+    "scripts": [
+      "conf.md"
+    ],
+    "assets": [
+      
+    ],
+    "targets": [
+      "node14-linux-x64",
+      "node14-macos-x64",
+      "node14-win-x86"
+    ]
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
@@ -11,20 +24,23 @@
     "form-data": "^3.0.0",
     "fs-extra": "^9.0.1",
     "gray-matter": "^4.0.2",
+    "moment": "^2.29.1",
     "multer": "^1.4.2",
     "needle": "^2.5.2",
     "nodemon": "^2.0.6",
     "pkg": "^4.4.9",
+    "pm2": "^4.5.1",
     "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-win": "pkg ./client/typora.js -t win -o ./out/typora-win.exe",
-    "build-linux": "pkg ./client/typora.js -t linux -o ./out/typora-linux.sh",
-    "build-mac": "pkg ./client/typora.js -t linux -o ./out/typora-mac.app",
+    "build-win": "pkg ./client/typora.js -t win -o ./dist/typora-win.exe",
+    "build-linux": "pkg ./client/typora.js -t linux -o ./dist/typora-linux.sh",
+    "build-mac": "pkg ./client/typora.js -t linux -o ./dist/typora-mac.app",
     "build": "npm run build-win && npm run build-linux && npm run build-mac",
-    "dev": "nodemon ./server/index.js"
+    "dev": "nodemon ./server/index.js",
+    "start": "pm2 ./server/index.js"
   },
   "repository": {
     "type": "git",
