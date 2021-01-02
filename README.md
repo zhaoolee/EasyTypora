@@ -40,4 +40,10 @@ Typora自定义图床，需要一个可执行文件，而Windows与Linux的shell
 如果你想省略传secret_token字段，那把conf.js里面的secret_token字段， 改成 `secret_token: ""`，就好了
 
 
+## 如何使用
 
+
+
+```
+git clone --depth 1 https://github.com/zhaoolee/EasyTypora.git
+```
