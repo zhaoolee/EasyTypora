@@ -15,7 +15,10 @@ EasyTypora是一个为Typora添加私用化图床的实用小工具，要使用�
 
 ## 最终效果
 
-![](https://static01.imgkr.com/temp/114b60532b1a4033a9ecd0808a329c8a.gif)
+
+![](https://static01.imgkr.com/temp/193d2d4f58d043e08bf756a56351457e.gif)
+
+
 
 ## 项目特色
 
@@ -173,6 +176,8 @@ npm run build
 
 
 
+
+
 #### 如何给图片加https?
 
 我通过Nginx加了https， 唯一需要注意的点是，在conf.js中，如果host配置了https, 那客户端的端口client_port需要设置为443
@@ -233,6 +238,12 @@ server {
 ```
 
 
+## 加Https后，在Linux发行版Deepin中，使用Typory上传图片到私有图床
+
+
+![](https://static01.imgkr.com/temp/193d2d4f58d043e08bf756a56351457e.gif)
+
+
 
 ## 未来的工作
 
@@ -256,3 +267,18 @@ Typora的Mac,Windows, Linux安装包备份：[https://zhaooolee.cowtransfer.com/
 pkg跨平台打包依赖文件备份（希望你的网络环境很好，用不到这玩意儿）： [https://zhaooolee.cowtransfer.com/s/05e7feb42c814d](https://zhaooolee.cowtransfer.com/s/05e7feb42c814d)
 
 
+
+
+
+## 最后放几张私有图床的图片
+
+
+![13cf7ac5a8cbafdbc4e70c69d3a42dee](https://cdn.fangyuanxiaozhan.com/assets/16095856188181mwkcMpJ.jpeg)
+
+![AttackingGiant](https://cdn.fangyuanxiaozhan.com/assets/16095856195647siSyZSY.jpeg)
+
+![GirlInTheRain](https://cdn.fangyuanxiaozhan.com/assets/1609585620021E8ziJWck.jpeg)
+
+![StarrySkyCastle](https://cdn.fangyuanxiaozhan.com/assets/1609585620728xZiCTDFW.jpeg)
+
+![SuperHero](https://cdn.fangyuanxiaozhan.com/assets/1609585621211YjFYxxKX.jpeg)
