@@ -2,6 +2,9 @@
 
 EasyTypora是一个为Typora添加私用化图床的实用小工具，要使用本项目，你需要有自己的一台云服务器～
 
+本项目永久地址：
+[https://github.com/zhaoolee/EasyTypora](https://github.com/zhaoolee/EasyTypora)
+
 ## 通过这个项目你能得到什么？
 
 - 在2021年，配合Typora使用，即使不买图床，也能获得极致的Markdown写作体验。
