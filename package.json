@@ -41,7 +41,8 @@
     "build": "npm run build-win && npm run build-linux && npm run build-mac",
     "dev": "nodemon ./server/index.js",
     "start": "pm2 start ./server/index.js",
-    "stop": "pm2 stop ./server/index.js"
+    "stop": "pm2 stop ./server/index.js",
+    "list": "pm2 list"
   },
   "repository": {
     "type": "git",

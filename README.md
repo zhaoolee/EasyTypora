@@ -41,7 +41,7 @@ Typora自定义图床，需要一个可执行文件，而Windows与Linux的shell
 当然可以！你只需满足file，secret_token这两个字段，就可以在网页使用，具体实现方式参考 client/typora.js ，开源代码绝不作假
 
 
-如果你想省略传secret_token字段，那把conf.js里面的secret_token字段， 改成 `secret_token: ""`，就好了
+如果你想省略传secret_token字段，那把conf.js里面的secret_token字段， 改成 `secret_token: ""`，就好了!
 
 
 ## 如何使用
