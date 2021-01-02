@@ -93,7 +93,11 @@ module.exports = {
 npm start
 ```
 
+#### 关闭服务
 
+```
+npm run stop
+```
 
 #### 构建客户端二进制包
 
