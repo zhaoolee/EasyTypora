@@ -52,13 +52,13 @@ async function download_http_img(img_url) {
     request(new_img_url).pipe(ws);
 
     ws.on("close", () => {
-      let http_image_url = `${host}:${client_port}/assets/${new_image_name}`;
+      let http_image_url = `${host}:${client_port}/assets/${img_name}`;
       if ((client_port == "80") || (client_port == "443")) {
-        http_image_url = `${host}/assets/${new_image_name}`;
+        http_image_url = `${host}/assets/${img_name}`;
       }
 
 
-      console.log(`--${moment().format("YYYY-MM-DD HH:mm:ss")}-http_image_url-->>${image_url}`)
+      console.log(`--${moment().format("YYYY-MM-DD HH:mm:ss")}-http_image_url-->>${http_image_url}`)
 
       resolve(http_image_url);
     })
