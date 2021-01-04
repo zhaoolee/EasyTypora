@@ -74,7 +74,7 @@ server.post('/download_http_file', async function (req, res) {
   let new_img_url = "https://www.v2fy.com/wp-content/uploads/2020/12/v2fy-logo-1.png";
 
 
-  let img_url = req["body"]["data"]["img_url"];
+  let img_url = req["body"]["img_url"];
 
   new_img_url =  await download_http_img(img_url);
 
@@ -83,7 +83,7 @@ server.post('/download_http_file', async function (req, res) {
 
   }
 
-  if ((secret_token.length === 0) || (req["body"]["data"]["secret_token"] === secret_token)) {
+  if ((secret_token.length === 0) || (req["body"]["secret_token"] === secret_token)) {
     result = {
       status: 1000,
       message: "下载图片",
