@@ -6,8 +6,11 @@ const path = require("path");
 const moment = require("moment");
 const conf_info = require("../conf");
 const request = require('request');
+const bodyParse = require("body-parser")
 
 let server = express();
+
+server.use(bodyParser.json())
 let upload = multer({ dest: __dirname + '/assets/' });
 
 
@@ -66,7 +69,7 @@ async function download_http_img(img_url) {
 
 server.post('/download_http_file', async function (req, res) {
 
-  console.log("=req=>>", req);
+  console.log("=req_body=>>", req["body"]);
 
   let new_img_url = "https://www.v2fy.com/wp-content/uploads/2020/12/v2fy-logo-1.png";
 

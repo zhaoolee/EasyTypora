@@ -78,9 +78,13 @@ async function main() {
     let result = "Upload Success:";
     for (let i = 0, args_length = args.length; i < args_length; i++) {
 
-        if ((args[i]).indexOf("http") === 0) {
+        console.log("args[i]==>>", args[i]);
 
-            if(args[i].indexOf[host] === 0) {
+        if ((args[i]).indexOf("http") === 0) {
+            console.log("===>>下载http==>>", args[i])
+            let image_url = "";
+
+            if(args[i].indexOf(host) === 0) {
 
                 image_url = args[i]
             }else{
@@ -92,7 +96,9 @@ async function main() {
             result = result + "\n" + image_url;
 
         } else {
-            image_url = await upload_file(args[i])
+            console.log("===>>下载本地==>>", args[i])
+            image_url = await upload_file(args[i]);
+
             result = result + "\n" + image_url;
 
 
