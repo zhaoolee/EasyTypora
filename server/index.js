@@ -6,7 +6,7 @@ const path = require("path");
 const moment = require("moment");
 const conf_info = require("../conf");
 const request = require('request');
-const bodyParse = require("body-parser")
+const bodyParser = require("body-parser")
 
 let server = express();
 
