@@ -41,7 +41,7 @@ function randomString(e) {
 
 async function download_http_img(img_url) {
   let new_img_url = new URL(img_url).origin + new URL(img_url).pathname;
-  const img_name = String(Date.now()) + randomString(8) + new_img_url.split(".").pop();
+  const img_name = String(Date.now()) + randomString(8) + "." + new_img_url.split(".").pop();
 
   const local_img_path_name = path.join(__dirname, "assets", img_name)
 
