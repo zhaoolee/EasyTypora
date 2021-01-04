@@ -64,7 +64,7 @@ async function download_http_img(img_url) {
 
 // 处理http图片
 
-server.post('/download_http_file', function (req, res) {
+server.post('/download_http_file', async function (req, res) {
 
   console.log("=req=>>", req);
 
