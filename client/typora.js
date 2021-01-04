@@ -78,7 +78,7 @@ async function main() {
     let result = "Upload Success:";
     for (let i = 0, args_length = args.length; i < args_length; i++) {
 
-        if (image_url = await download_http_file(args[i]).indexOf("http") === 0) {
+        if ((args[i]).indexOf("http") === 0) {
 
             if(args[i].indexOf[host] === 0) {
 
