@@ -74,7 +74,7 @@ tar xvf node-v14.0.0-linux-x64.tar.xz
 
 ```
 
-- 将Node.js添加到系统变量 vim
+- 将Node.js添加到系统变量 
 
 ```
 echo "export NODE_HOME=/opt/node-v14.0.0-linux-x64" >> ~/.bashrc
