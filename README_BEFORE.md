@@ -16,7 +16,7 @@ EasyTypora是一个为Typora添加私用化图床的实用小工具，要使用�
 ## 最终效果
 
 
-![](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212776529GNazs3pP.gif)
+![](https://static01.imgkr.com/temp/193d2d4f58d043e08bf756a56351457e.gif)
 
 
 
@@ -134,11 +134,11 @@ npm start
 
 服务启动后，访问对应的域名和端口可以看到提示信息
 
-![](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/161021280880543zwKGJT.png)
+![](https://static01.imgkr.com/temp/2bced93851334b0da32f135355af5782.png)
 
 添加/info路径，可以除secret_token以外的配置信息
 
-![](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212811697Nnr0a8Wh.png)
+![](https://static01.imgkr.com/temp/4b90d0f32dac415482023e651303c0e6.png)
 
 
 
@@ -165,13 +165,13 @@ npm run build
 |  typora-mac.app    |   macOS   |
 |   typora-linux.sh    |  linux     |
 
-![](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212815891fPTxkEFj.png)
+![](https://static01.imgkr.com/temp/28356b68323f4f6da623557202511c3d.png)
 
 
 
 #### 我们可以通过scp文件传输服务,把生成的文件保存到本地,然后在本地验证服务
 
-![](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212828448a0niFYNs.gif)
+![](https://static01.imgkr.com/temp/114b60532b1a4033a9ecd0808a329c8a.gif)
 
 
 
@@ -241,7 +241,7 @@ server {
 ## 加Https后，在Linux发行版Deepin中，使用Typory上传图片到私有图床
 
 
-![](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212843827dwDX07bF.gif)
+![](https://static01.imgkr.com/temp/193d2d4f58d043e08bf756a56351457e.gif)
 
 
 
@@ -273,12 +273,12 @@ pkg跨平台打包依赖文件备份（希望你的网络环境很好，用不�
 ## 最后放几张私有图床的图片
 
 
-![13cf7ac5a8cbafdbc4e70c69d3a42dee](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212863145853JKeJ7.jpeg)
+![13cf7ac5a8cbafdbc4e70c69d3a42dee](https://cdn.fangyuanxiaozhan.com/assets/16095856188181mwkcMpJ.jpeg)
 
-![AttackingGiant](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212868489hE5KJpyP.jpeg)
+![AttackingGiant](https://cdn.fangyuanxiaozhan.com/assets/16095856195647siSyZSY.jpeg)
 
-![GirlInTheRain](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212871543x2YaaaNy.jpeg)
+![GirlInTheRain](https://cdn.fangyuanxiaozhan.com/assets/1609585620021E8ziJWck.jpeg)
 
-![StarrySkyCastle](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212875153hJpyk0EP.jpeg)
+![StarrySkyCastle](https://cdn.fangyuanxiaozhan.com/assets/1609585620728xZiCTDFW.jpeg)
 
-![SuperHero](https://raw.githubusercontent.com/zhaoolee/EasyTypora/master/README/1610212880310wQeBP1aM.jpeg)
+![SuperHero](https://cdn.fangyuanxiaozhan.com/assets/1609585621211YjFYxxKX.jpeg)
