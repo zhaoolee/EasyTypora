@@ -35,7 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-win": "pkg ./client/typora.js -t win -o ./dist/typora-win.exe",
     "build-linux": "pkg ./client/typora.js -t linux -o ./dist/typora-linux.sh",
-    "build-mac": "pkg ./client/typora.js -t linux -o ./dist/typora-mac.app",
+    "build-mac": "pkg ./client/typora.js -t macos -o ./dist/typora-mac.app",
     "build": "npm run build-win && npm run build-linux && npm run build-mac",
     "dev": "nodemon ./server/index.js",
     "start": "pm2 start ./server/index.js",
