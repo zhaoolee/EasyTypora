@@ -11,7 +11,15 @@ EasyTypora是一个为Typora添加私用化图床的实用小工具，要使用�
 - 学会手动安装Node.js的任意版本。
 - 体验Node.js神库pkg的跨平台编译,你将获得Windows， macOS, Linux三个平台的可执行文件，配合各个平台的Typora一起使用
 
+## Typora最终的免费版各平台安装包下载
 
+Windows 32位安装包
+
+Windows 64位安装包
+
+macOS安装包
+
+Linux安装包
 
 ## 最终效果
 
