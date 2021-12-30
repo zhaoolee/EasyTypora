@@ -11,15 +11,15 @@ EasyTypora是一个为Typora添加私用化图床的实用小工具，要使用�
 - 学会手动安装Node.js的任意版本。
 - 体验Node.js神库pkg的跨平台编译,你将获得Windows， macOS, Linux三个平台的可执行文件，配合各个平台的Typora一起使用
 
-## Typora最终的免费版各平台安装包下载
+## Typora开始收费了,最终的免费版各平台安装包下载(免费版够用了)
 
-Windows 32位安装包
+Windows 32位安装包 https://github.com/zhaoolee/EasyTypora/raw/main/Typora%E6%9C%80%E7%BB%88%E7%9A%84%E5%85%8D%E8%B4%B9%E7%89%88%E5%90%84%E5%B9%B3%E5%8F%B0%E5%AE%89%E8%A3%85%E5%8C%85%E6%94%B6%E8%97%8F/typora-update-ia32-1117.exe
 
-Windows 64位安装包
+Windows 64位安装包 https://github.com/zhaoolee/EasyTypora/raw/main/Typora%E6%9C%80%E7%BB%88%E7%9A%84%E5%85%8D%E8%B4%B9%E7%89%88%E5%90%84%E5%B9%B3%E5%8F%B0%E5%AE%89%E8%A3%85%E5%8C%85%E6%94%B6%E8%97%8F/typora-update-x64-1117.exe
 
-macOS安装包
+macOS安装包 https://github.com/zhaoolee/EasyTypora/raw/main/Typora%E6%9C%80%E7%BB%88%E7%9A%84%E5%85%8D%E8%B4%B9%E7%89%88%E5%90%84%E5%B9%B3%E5%8F%B0%E5%AE%89%E8%A3%85%E5%8C%85%E6%94%B6%E8%97%8F/Typora-0.11.18.dmg
 
-Linux安装包
+Linux安装包 https://github.com/zhaoolee/EasyTypora/raw/main/Typora%E6%9C%80%E7%BB%88%E7%9A%84%E5%85%8D%E8%B4%B9%E7%89%88%E5%90%84%E5%B9%B3%E5%8F%B0%E5%AE%89%E8%A3%85%E5%8C%85%E6%94%B6%E8%97%8F/typora_0.11.18_amd64.deb
 
 ## 最终效果
 
