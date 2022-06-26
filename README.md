@@ -35,6 +35,8 @@ Linux安装包 https://github.com/zhaoolee/EasyTypora/raw/main/Typora%E6%9C%80%E
 - 图床私用化，无需担心被别人白嫖流量，如果你想分享给同伴，可以直接送一个可执行文件的客户端。
 - 如果客户端泄露，被人滥用，可以在服务端全自动生成新的可执行文件，旧版本的可执行文件直接作废！
 - 可以和Nginx配合使用，不小心Kill掉了图床程序，已上传图片访问不受影响。
+- 支持PicGo插件上传图片，开源地址 https://github.com/zhaoolee/pi-picgo/
+
 
 ## 如何实现图床私有化加密？（避免白嫖）
 
