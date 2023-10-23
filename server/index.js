@@ -127,7 +127,14 @@ server.post('/download_http_file', async function (req, res) {
 server.post('/upload_file', upload.single('file'), function (req, res) {
 
   console.log("file信息", req.file);
-  let new_image_name = String(Date.now()) + randomString(8) + "." + req.file.mimetype.split("/").pop();
+
+  let extension = req.file.mimetype.split("/").pop();
+  if (extension === "octet-stream") {
+      extension = "png";
+  }
+  let new_image_name = String(Date.now()) + randomString(8) + "." + extension;
+
+  // let new_image_name = String(Date.now()) + randomString(8) + "." + req.file.mimetype.split("/").pop();
   console.log("===req>>>::", req);
   // 如配置文件conf.js中secret_token为空字符串，或客户端携带正确的secret_token, 则进行存储； 如果无法通过校验，则返回鉴权失败
   if ((secret_token.length === 0) || (req["body"]["secret_token"] === secret_token)) {
