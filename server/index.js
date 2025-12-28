@@ -4,6 +4,7 @@ const expressStatic = require("express-static");
 const fs = require("fs-extra");
 const path = require("path");
 const moment = require("moment");
+const crypto = require("crypto");
 const conf_info = require("../conf");
 const request = require('request');
 const bodyParser = require("body-parser")
@@ -12,6 +13,7 @@ let server = express();
 
 server.use(bodyParser.json())
 let upload = multer({ dest: __dirname + '/assets/' });
+const HASH_PREFIX_LEN = 64;
 
 
 // 获取配置信息
@@ -36,6 +38,16 @@ function randomString(e) {
     n = "";
   for (i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
   return n
+}
+
+function hashFile(filePath) {
+  return new Promise((resolve, reject) => {
+    const hash = crypto.createHash("sha256");
+    const stream = fs.createReadStream(filePath);
+    stream.on("error", reject);
+    stream.on("data", (chunk) => hash.update(chunk));
+    stream.on("end", () => resolve(hash.digest("hex")));
+  });
 }
 
 
@@ -124,7 +136,7 @@ server.post('/download_http_file', async function (req, res) {
 })
 
 // 处理提交文件的post请求
-server.post('/upload_file', upload.single('file'), function (req, res) {
+server.post('/upload_file', upload.single('file'), async function (req, res) {
 
   console.log("file信息", req.file);
 
@@ -132,22 +144,38 @@ server.post('/upload_file', upload.single('file'), function (req, res) {
   if (extension === "octet-stream") {
       extension = "png";
   }
-  let new_image_name = String(Date.now()) + randomString(8) + "." + extension;
+  let new_image_name = "";
 
   // let new_image_name = String(Date.now()) + randomString(8) + "." + req.file.mimetype.split("/").pop();
   console.log("===req>>>::", req);
   // 如配置文件conf.js中secret_token为空字符串，或客户端携带正确的secret_token, 则进行存储； 如果无法通过校验，则返回鉴权失败
   if ((secret_token.length === 0) || (req["body"]["secret_token"] === secret_token)) {
+    try {
+      const file_hash = await hashFile(req.file.path);
+      const short_hash = file_hash.slice(0, HASH_PREFIX_LEN);
+      new_image_name = `${short_hash}.${extension}`;
+      const target_path = path.join(req.file.destination, new_image_name);
 
-    fs.moveSync(req.file.path, path.join(req.file.destination, new_image_name));
-    let image_url = `${host}:${client_port}/assets/${new_image_name}`;
-    if ((client_port == "80") || (client_port == "443")) {
-      image_url = `${host}/assets/${new_image_name}`;
+      if (await fs.pathExists(target_path)) {
+        await fs.remove(req.file.path);
+        console.log("文件已存在，删除临时文件");
+      } else {
+        await fs.move(req.file.path, target_path);
+        console.log("文件移动到目标路径");
+      }
+
+      let image_url = `${host}:${client_port}/assets/${new_image_name}`;
+      if ((client_port == "80") || (client_port == "443")) {
+        image_url = `${host}/assets/${new_image_name}`;
+      }
+      
+
+      console.log(`--${moment().format("YYYY-MM-DD HH:mm:ss")}-image_url-->>${image_url}`)
+      res.send(image_url)
+    } catch (err) {
+      console.error("处理上传文件失败:", err);
+      res.status(500).send("处理上传文件失败");
     }
-
-
-    console.log(`--${moment().format("YYYY-MM-DD HH:mm:ss")}-image_url-->>${image_url}`)
-    res.send(image_url)
 
   } else {
 
